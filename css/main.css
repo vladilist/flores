@@ -154,8 +154,18 @@ body {
   transform: translate(-50%, -100%);
   width: 8vmin;
   height: 8vmin;
-  background-color: #6bf0ff;
+  background-color: #;
   filter: blur(10vmin);
+}
+.flower__leaf::before {
+  content: '';
+  position: absolute;
+  top: 10%;
+  left: 50%;
+  width: 1px;
+  height: 80%;
+  background-color: rgba(255, 255, 255, 0.3);
+  transform: translateX(-50%);
 }
 .flower__leaf {
   position: absolute;
@@ -163,12 +173,12 @@ body {
   left: 50%;
   width: 8vmin;
   height: 11vmin;
-  border-radius: 51% 49% 47% 53%/44% 45% 55% 69%;
-  background-color: #a7ffee;
-  background-image: linear-gradient(to top, #54b8aa, #a7ffee);
+  border-radius: 60% 40% 20% 80%/20% 60% 40% 50%;
+  background-color: #ff4d4d;
+  background-image: linear-gradient(to top, #b30000, #ff6666);
   transform-origin: bottom center;
-  opacity: 0.9;
-  box-shadow: inset 0 0 2vmin rgba(255, 255, 255, 0.5);
+  opacity: 1;
+  box-shadow: inset 0 0 2vmin rgba(0, 0, 0, 0.3);
 }
 .flower__leaf--1 {
   transform: translate(-10%, 1%) rotateY(40deg) rotateX(-50deg);
@@ -183,7 +193,7 @@ body {
   width: 8vmin;
   height: 8vmin;
   transform-origin: bottom left;
-  border-radius: 4vmin 10vmin 4vmin 4vmin;
+  border-radius: 60% 40% 20% 80%/20% 60% 40% 50%;
   transform: translate(0%, 18%) rotateX(70deg) rotate(-43deg);
   background-image: linear-gradient(to top, #39c6d6, #a7ffee);
   z-index: 1;
@@ -196,7 +206,7 @@ body {
   width: 9vmin;
   height: 4vmin;
   border-radius: 50%;
-  background-color: #fff;
+  background-color: #yellow;
 }
 .flower__white-circle::after {
   content: "";
@@ -208,6 +218,56 @@ body {
   height: 60%;
   border-radius: inherit;
   background-image: repeating-linear-gradient(135deg, rgba(0, 0, 0, 0.03) 0px, rgba(0, 0, 0, 0.03) 1px, transparent 1px, transparent 12px), repeating-linear-gradient(45deg, rgba(0, 0, 0, 0.03) 0px, rgba(0, 0, 0, 0.03) 1px, transparent 1px, transparent 12px), repeating-linear-gradient(67.5deg, rgba(0, 0, 0, 0.03) 0px, rgba(0, 0, 0, 0.03) 1px, transparent 1px, transparent 12px), repeating-linear-gradient(135deg, rgba(0, 0, 0, 0.03) 0px, rgba(0, 0, 0, 0.03) 1px, transparent 1px, transparent 12px), repeating-linear-gradient(45deg, rgba(0, 0, 0, 0.03) 0px, rgba(0, 0, 0, 0.03) 1px, transparent 1px, transparent 12px), repeating-linear-gradient(112.5deg, rgba(0, 0, 0, 0.03) 0px, rgba(0, 0, 0, 0.03) 1px, transparent 1px, transparent 12px), repeating-linear-gradient(112.5deg, rgba(0, 0, 0, 0.03) 0px, rgba(0, 0, 0, 0.03) 1px, transparent 1px, transparent 12px), repeating-linear-gradient(45deg, rgba(0, 0, 0, 0.03) 0px, rgba(0, 0, 0, 0.03) 1px, transparent 1px, transparent 12px), repeating-linear-gradient(22.5deg, rgba(0, 0, 0, 0.03) 0px, rgba(0, 0, 0, 0.03) 1px, transparent 1px, transparent 12px), repeating-linear-gradient(45deg, rgba(0, 0, 0, 0.03) 0px, rgba(0, 0, 0, 0.03) 1px, transparent 1px, transparent 12px), repeating-linear-gradient(22.5deg, rgba(0, 0, 0, 0.03) 0px, rgba(0, 0, 0, 0.03) 1px, transparent 1px, transparent 12px), repeating-linear-gradient(135deg, rgba(0, 0, 0, 0.03) 0px, rgba(0, 0, 0, 0.03) 1px, transparent 1px, transparent 12px), repeating-linear-gradient(157.5deg, rgba(0, 0, 0, 0.03) 0px, rgba(0, 0, 0, 0.03) 1px, transparent 1px, transparent 12px), repeating-linear-gradient(67.5deg, rgba(0, 0, 0, 0.03) 0px, rgba(0, 0, 0, 0.03) 1px, transparent 1px, transparent 12px), repeating-linear-gradient(67.5deg, rgba(0, 0, 0, 0.03) 0px, rgba(0, 0, 0, 0.03) 1px, transparent 1px, transparent 12px), linear-gradient(90deg, rgb(255, 235, 18), rgb(255, 206, 0));
+}
+.flower__stamens {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 4vmin;
+  height: 4vmin;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.flower__stamens::before, 
+.flower__stamens::after {
+  content: '';
+  position: absolute;
+  width: 0.3vmin;
+  height: 3vmin;
+  background-color: #a0522d; /* Color marrón para los filamentos */
+  border-radius: 50%;
+  transform-origin: bottom center;
+  transform: rotate(20deg); /* Ajusta el ángulo de los estambres */
+}
+
+.flower__stamens::before {
+  transform: rotate(-20deg);
+}
+.flower__pistil {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 0.5vmin;
+  height: 5vmin;
+  background-color: #ffcc00; /* Amarillo para el pistilo */
+  border-radius: 50%;
+  z-index: 1; /* Aparece sobre los estambres */
+}
+
+.flower__pistil::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 1vmin;
+  height: 1vmin;
+  background-color: #ff9900; /* Color más oscuro para la punta */
+  border-radius: 50%;
 }
 .flower__line {
   height: 55vmin;
